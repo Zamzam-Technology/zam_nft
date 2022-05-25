@@ -1,0 +1,32 @@
+[
+    {
+        "wallet": "0x00000",
+        "level": 1,
+        "staked": 1000
+    },
+    {
+        "wallet": "0x11111",
+        "level": 1,
+        "staked": 1000
+    },
+    {
+        "wallet": "0x22222",
+        "level": 2,
+        "staked": 2500
+    },
+    {
+        "wallet": "0x33333",
+        "level": 2,
+        "staked": 2500
+    },
+    {
+        "wallet": "0x44444",
+        "level": 3,
+        "staked": 3500
+    },
+    {
+        "wallet": "0x55555",
+        "level": 3,
+        "staked": 3500
+    }
+]

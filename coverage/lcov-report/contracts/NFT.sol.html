@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/NFT.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> NFT.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>32/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>54/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity &gt;=0.8.4 &lt;0.9.0;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+&nbsp;
+contract ZAMNFT is ERC721, Ownable {
+    string public baseURI;
+&nbsp;
+    bool public paused = false;
+    bool public presale = true;
+&nbsp;
+    uint256 public maxMintAmount = 3;
+&nbsp;
+    uint256 public preSalePrice = 0.15 ether;
+    uint256 public publicSalePrice = 0.18 ether;
+&nbsp;
+    mapping(address =&gt; bool) public specialListIndex;
+    address[] public specialList;
+    mapping(address =&gt; uint256) public specailListMaxMintAmount;
+&nbsp;
+    bytes32 private root_1;
+    bytes32 private root_2;
+    bytes32 private root_3;
+&nbsp;
+    uint256 public minted_1;
+    uint256 public minted_2;
+    uint256 public minted_3;
+    uint256 public minted_owner;
+&nbsp;
+    uint256 public totalLevel1 = 7000;
+    uint256 public totalLevel2 = 1500;
+    uint256 public totalLevel3 = 172;
+    uint256 public totalOwner = 216;
+&nbsp;
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        string memory _initBaseURI
+    ) ERC721(_name, _symbol) {
+        setBaseURI(_initBaseURI);
+        minted_2 = totalLevel1 - 1;
+        minted_3 = totalLevel1 + totalLevel2 - 1;
+        minted_owner = totalLevel1 + totalLevel2 + totalLevel3;
+    }
+&nbsp;
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseURI;
+    }
+&nbsp;
+    function setBaseURI(string memory _newBaseURI) public onlyOwner {
+        baseURI = _newBaseURI;
+    }
+&nbsp;
+    function _addOneSpecialList(address one) private {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!inArray(one)) {
+            // Append
+            specialListIndex[one] = true;
+            specialList.push(one);
+        }
+    }
+&nbsp;
+    function inArray(address who) private view returns (bool) {
+        // address 0x0 is not valid if pos is 0 is not in the array
+        if (specialListIndex[who]) {
+            return true;
+        }
+        return false;
+    }
+&nbsp;
+    function addSpecialList(address[] memory addresses) public onlyOwner {
+        for(uint i = 0 ; i &lt; addresses.length ; i++) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(addresses[i] != address(0), "NFT.addSpecialList : input address list contais zero address.");
+            _addOneSpecialList(addresses[i]);
+        }
+    }
+&nbsp;
+    function setMaximumSpecialList(address[] memory addresses, uint256 maxMint) public onlyOwner {
+        for(uint i = 0 ; i &lt; addresses.length ; i++) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(addresses[i] != address(0), "NFT.setMaximumSpecialList : input address list contais zero address.");
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(inArray(addresses[i]), "NFT.setMaximumSpecialList : this address is not special list wallet");
+            specailListMaxMintAmount[addresses[i]] = maxMint;
+        }
+    }
+&nbsp;
+    function setVerify(bytes32 root, uint level) public onlyOwner {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(level &lt; 4, "setVerify : level has to be less than 4.");
+        if (level == 1)
+            root_1 = root;
+        else if (level == 2)
+            root_2 = root;
+        else
+            root_3 = root;
+    }
+&nbsp;
+    function verify(bytes32[] memory proof, uint level) public view returns(bool) {
+        bytes32 leaf = keccak256(abi.encodePacked(msg.sender));
+        if (level == 1)
+            return MerkleProof.verify(proof, root_1, leaf);
+        else if (level == 2)
+            return MerkleProof.verify(proof, root_2, leaf);
+        else 
+            return MerkleProof.verify(proof, root_3, leaf);
+    }
+&nbsp;
+    function mint(uint256 amount, uint256 level, bytes32[] memory proof) public payable {
+        // uint256 supply = totalSupply();
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!paused);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amount &gt; 0);
+        if(inArray(msg.sender)) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(amount &lt; specailListMaxMintAmount[msg.sender], "mint : special-list wallet mint amount has to be less or equal than maximum mint amount");
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(!presale, "mint : special-list can mint in public-sale.");
+            _publicsale(msg.sender, amount, level);
+        } else {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(amount &lt; maxMintAmount, "mint : mint amount has to be less or equal than maximum mint amount");
+            if(presale) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.value &gt;= amount * preSalePrice, "mint : msg.value has to be greater than amount * price");
+                _presale(msg.sender, amount, level, proof);
+            } else {
+                <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.value &gt;= amount * publicSalePrice, "mint : msg.value has to be greater than amount * price");
+                _publicsale(msg.sender, amount, level);
+            }
+        }
+    }
+&nbsp;
+    function _presale(address minter, uint256 amount, uint256 level, bytes32[] memory proof) private {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(verify(proof, level), "_persale : Address is not whitelisted.");
+        _publicsale(minter, amount, level);
+    }
+&nbsp;
+    function _publicsale(address minter, uint256 amount, uint256 level) private {
+        if(level == 1) {
+            for(uint256 i = 0 ; i &lt; amount ; i++) {
+                _safeMint(minter, (minted_1+i));
+            }
+            minted_1 += amount;
+        } else if (level == 2) {
+            for(uint256 i = 0 ; i &lt; amount ; i++) {
+                _safeMint(minter, (minted_2+i));
+            }
+            minted_2 += amount;
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (level == 3) {
+            for(uint256 i = 0 ; i &lt; amount ; i++) {
+                _safeMint(minter, (minted_3+i));
+            }
+            minted_3 += amount;
+        }
+    }
+&nbsp;
+    function setPresale(bool state) public onlyOwner {
+        presale = state;
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Feb 21 2022 12:00:38 GMT+0800 (Ulaanbaatar Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

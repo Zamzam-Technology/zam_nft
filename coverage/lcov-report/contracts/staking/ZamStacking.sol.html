@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/staking/ZamStacking.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/staking/</a> ZamStacking.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.84% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>37/79</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.8.0;
+&nbsp;
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "./TransferHelper.sol";
+&nbsp;
+contract ZamStacking is ReentrancyGuard, Initializable{
+    
+    event Deposit(address indexed user, uint256 amount);
+    event Withdraw(address indexed user, uint256 amount);
+&nbsp;
+    struct UserInfo {
+        uint256 amount;
+        uint256 rewardDebt; // calculated as amount * s at update moment
+    }
+&nbsp;
+    uint256 public s;
+    uint256 public percent;
+    uint256 public rewardPeriod;
+    uint256 public periodDuration;
+    uint256 public totalPassedTime;
+    uint256 public lastUpdateTimestamp;
+    uint256 public totalStake;
+    uint256 public rewardClaimed; 
+    IERC20 public stakedToken;
+    IERC20 public rewardToken;
+&nbsp;
+    mapping(address =&gt; UserInfo) public userInfo;
+&nbsp;
+    address public owner;
+&nbsp;
+    address public feeReceiver;
+    uint256 public fee;
+&nbsp;
+    address public vault;
+&nbsp;
+    uint public PERCENT_DIVISOR;
+    uint public S_DIVISOR;
+    uint public FEE_DIVISOR;
+    uint public SECONDS_IN_YEAR;
+    uint public PERCENT_LIMIT;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    modifier onlyOwner() {</span>
+<span class="cstat-no" title="statement not covered" >        require(owner == msg.sender, "Ownable: caller is not the owner")</span>;
+        _ ;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function renounceOwnership() external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        owner = address(0)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function transferOwnership(address _newOwner) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        require(_newOwner != address(0), "Ownable: new owner is the zero address")</span>;
+<span class="cstat-no" title="statement not covered" >        owner = _newOwner</span>;
+    }
+&nbsp;
+    function initialize(address _owner, address _vault, 
+                            address _stakedToken, address _rewardToken) external initializer {
+        owner = _owner;
+        s = 0;
+        percent = 0;
+        rewardPeriod = 0;
+        lastUpdateTimestamp = 0;
+        totalStake = 0;
+        vault = _vault;
+        stakedToken = IERC20(_stakedToken);
+        rewardToken = IERC20(_rewardToken);
+&nbsp;
+        PERCENT_DIVISOR = 10**5;
+        S_DIVISOR = 10**24;
+        FEE_DIVISOR = 100;
+        SECONDS_IN_YEAR = 31536000;
+        PERCENT_LIMIT = 89000;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function pendingReward(address _user) external view returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        UserInfo memory user = userInfo[_user];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint timestamp = min(periodDuration, block.timestamp);</span>
+<span class="cstat-no" title="statement not covered" >        uint passedTime = timestamp - lastUpdateTimestamp;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint temp_s = s + ((percent * passedTime * S_DIVISOR) / PERCENT_DIVISOR) / SECONDS_IN_YEAR;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return ((user.amount * temp_s) / S_DIVISOR) - user.rewardDebt;</span>
+    }
+&nbsp;
+&nbsp;
+    // _periodDuration - till what time stacking will end (based on unix timestamp)
+<span class="fstat-no" title="function not covered" >    function updateStake(uint256 _rewardPeriod, uint256 _periodDuration, bool _beforeSwitch) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        if (_beforeSwitch) {</span>
+<span class="cstat-no" title="statement not covered" >            updatePoolState(totalStake)</span>; // do this for right calculation between switching vestings period
+        }
+<span class="cstat-no" title="statement not covered" >        rewardPeriod = rewardPeriod +_rewardPeriod</span>;
+<span class="cstat-no" title="statement not covered" >        periodDuration = _periodDuration</span>;
+<span class="cstat-no" title="statement not covered" >        updatePoolState(totalStake)</span>;
+    }
+&nbsp;
+    
+    function updatePoolState(uint _updateStake) internal {
+        uint timestamp = min(periodDuration, block.timestamp);
+        uint passedTime = timestamp - lastUpdateTimestamp; // passed time from previoud period
+        totalPassedTime = block.timestamp; // passed time 
+&nbsp;
+        uint passedReward = 0;
+&nbsp;
+        s += ((percent * passedTime * S_DIVISOR) / PERCENT_DIVISOR) / SECONDS_IN_YEAR;
+        passedReward = ((totalStake * percent * passedTime) / PERCENT_DIVISOR) / SECONDS_IN_YEAR;
+        rewardPeriod -= passedReward;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_updateStake &gt; 0 &amp;&amp; periodDuration &gt; totalPassedTime) {
+<span class="cstat-no" title="statement not covered" >            percent = ((rewardPeriod * SECONDS_IN_YEAR * PERCENT_DIVISOR) / (periodDuration - totalPassedTime)) / _updateStake</span>;
+        } else {
+            percent = 0;
+        }
+        
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (passedReward &gt; 0) {
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeTransferFrom(address(rewardToken), vault, address(this), passedReward)</span>;
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (percent &gt; PERCENT_LIMIT) {
+<span class="cstat-no" title="statement not covered" >            percent = PERCENT_LIMIT</span>;
+        }
+&nbsp;
+        lastUpdateTimestamp = timestamp;
+        totalStake = _updateStake;
+    }
+&nbsp;
+    function deposit(uint256 _amount) external nonReentrant {
+        updatePoolState(totalStake + _amount);
+&nbsp;
+        UserInfo storage user = userInfo[msg.sender];
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (user.amount &gt; 0) {
+<span class="cstat-no" title="statement not covered" >            uint256 pending = (user.amount * s) / S_DIVISOR - user.rewardDebt;</span>
+<span class="cstat-no" title="statement not covered" >            if (pending &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                transferReward(address(rewardToken), msg.sender, pending)</span>;
+            }
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (_amount &gt; 0) {
+            TransferHelper.safeTransferFrom(address(stakedToken), msg.sender, address(this), _amount);
+            user.amount += _amount;
+        }
+        user.rewardDebt = (user.amount * s) / S_DIVISOR;
+&nbsp;
+        emit Deposit(msg.sender, _amount);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function withdraw(uint256 _amount) external nonReentrant {</span>
+<span class="cstat-no" title="statement not covered" >        UserInfo storage user = userInfo[msg.sender];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(user.amount &gt;= _amount, "Withdraw: not enough deposit")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        updatePoolState(totalStake - _amount)</span>;
+<span class="cstat-no" title="statement not covered" >        uint256 pending = user.amount * s / S_DIVISOR - user.rewardDebt;</span>
+<span class="cstat-no" title="statement not covered" >        if (pending &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            transferReward(address(rewardToken), msg.sender, pending)</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (_amount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            user.amount -= _amount</span>;
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeTransfer(address(stakedToken), msg.sender, _amount)</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        user.rewardDebt = user.amount * s / S_DIVISOR</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Withdraw(msg.sender, _amount);</span>
+    }
+&nbsp;
+    function min(uint256 a, uint256 b) internal pure returns (uint256) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (a &gt; b) {
+<span class="cstat-no" title="statement not covered" >            return b;</span>
+        }
+            return a;
+    }
+&nbsp;
+    // set in percent 10 = 10%
+<span class="fstat-no" title="function not covered" >    function setFee(uint _fee) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        fee = _fee</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function setFeeReceiver(address _feeReceiver) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        feeReceiver = _feeReceiver</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function setVaultAddress(address _vault) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        require(_vault != address(0), "Vault: vault can not be zero address")</span>;
+<span class="cstat-no" title="statement not covered" >        vault = _vault</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function transferReward(address _token, address _to, uint _amount) internal {</span>
+<span class="cstat-no" title="statement not covered" >        uint fee_transfer = 0;</span>
+<span class="cstat-no" title="statement not covered" >        if (feeReceiver != address(0)) {</span>
+<span class="cstat-no" title="statement not covered" >            uint fee_transfer = (_amount * fee) / FEE_DIVISOR;</span>
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeTransfer(_token, feeReceiver, fee_transfer)</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        TransferHelper.safeTransfer(_token, _to, _amount - fee_transfer)</span>;
+<span class="cstat-no" title="statement not covered" >        rewardClaimed += _amount - fee_transfer</span>;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Feb 21 2022 12:00:38 GMT+0800 (Ulaanbaatar Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

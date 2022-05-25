@@ -1,0 +1,6 @@
+node_modules
+.secret
+build
+contracts/Flat.sol
+test/helpers/lvl_2.json
+test/helpers/lvl_3.json
